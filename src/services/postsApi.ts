@@ -1,4 +1,4 @@
-import { serverApi } from "./serverApi";
+import { serverApi } from "./api";
 
 export type PostType = {
   id: number;
