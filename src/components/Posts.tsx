@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useGetPostsQuery } from "../services/postsApi";
 
 type Inputs = {
   title: string;
@@ -8,7 +9,7 @@ type Inputs = {
 
 export function Posts() {
   const [title, setTitle] = useState("");
-  const data: any = [];
+  const { data } = useGetPostsQuery();
 
   const { register, handleSubmit, reset } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -27,7 +28,7 @@ export function Posts() {
           <button type="submit">criar</button>
         </form>
         <br />
-        <span>filtrar por nome</span>
+        <span>filtrar por título</span>
         <input
           onChange={(e) => {
             setTitle(e.target.value);
@@ -37,11 +38,13 @@ export function Posts() {
       <ul>
         {data?.map((item: any) => (
           <li key={item.id}>
-            <span>{item.title}</span>
+            <span>Titulo: {item.title}</span>
             <br />
-            <span>{item.author}</span>
+            <span>Autor: {item.author}</span>
             <br />
+            <span>Lido?</span>
             <input defaultChecked={item.checked} type="checkbox" />
+            <br />
             <button>Remover</button>
           </li>
         ))}
