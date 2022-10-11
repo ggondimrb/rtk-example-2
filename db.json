@@ -1,13 +1,13 @@
 {
     "posts": [
       {
-        "title": "Aprendendo React",
+        "title": "Os Beneficios do RTK",
         "author": "Gabriel",
         "id": 1,
         "checked": false
       },
       {
-        "title": "os Beneficios do RTK",
+        "title": "Aprendendo React",
         "author": "Brendon",
         "id": 2,
         "checked": true

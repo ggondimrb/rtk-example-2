@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
@@ -6,7 +7,9 @@ type Inputs = {
 };
 
 export function Posts() {
+  const [title, setTitle] = useState("");
   const data: any = [];
+
   const { register, handleSubmit, reset } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
@@ -23,6 +26,13 @@ export function Posts() {
           <input {...register("author")} />
           <button type="submit">criar</button>
         </form>
+        <br />
+        <span>filtrar por nome</span>
+        <input
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+        />
       </div>
       <ul>
         {data?.map((item: any) => (
