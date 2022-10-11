@@ -1,0 +1,20 @@
+{
+    "posts": [
+      {
+        "title": "Aprendendo React",
+        "author": "Gabriel",
+        "id": 1,
+        "checked": false
+      },
+      {
+        "title": "os Beneficios do RTK",
+        "author": "Brendon",
+        "id": 2,
+        "checked": true
+      }
+    ],
+    "comments": [],
+    "profile": {
+      "name": "typicode"
+    }
+  }
